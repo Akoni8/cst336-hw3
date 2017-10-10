@@ -1,4 +1,38 @@
+body {
+    background-image: url("./images/battleground.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: serif;
+    font-size: 1.4em;
+    font-weight: bold;
+}
 #container {
     margin: 0 auto;
     text-align: center;
+}
+
+div {
+    color: white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+#dragon {
+    color: yellow;
+    text-transform: uppercase;
+}
+
+#ball {
+    color:red;
+    text-transform: uppercase;
+}
+
+#z {
+    font-size: 1.4em;
+    color: red;
+}
+
+#fighter {
+    color: orange;
+    text-transform: uppercase;
 }

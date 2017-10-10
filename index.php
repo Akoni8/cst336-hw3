@@ -6,23 +6,23 @@
     </head>
     <body>
 
-        
-
         <div id="container">
             
-            <h1>HTML Forms / PHP</h1>
-            <h2>Sport Search Form</h2>
-            
+            <!--<h1> <span id="dragon">Dragon</span> <span id="ball">Ball</span> <span id="z">Z</span></h1>-->
+            <!--<h2 id="fighter">Fighter</h2>-->
+            <a href="https://fontmeme.com/dragon-ball-z-font/"><img src="https://fontmeme.com/permalink/171005/9c302a752a3cbd4ddeaf73cf76bfb9e4.png" alt="dragon-ball-z-font" border="0"></a>
             
             <form>
                 <div>
-                    <input type="text" name="team" placeholder="Team">
+                    <span>What is your name?</span>
+                    <input type="text" name="name" placeholder="Name">
                 </div>
                 <div>
-                    <input type="radio" name="professional" value="professional" id="professional"/>
-                    <label for="professional">Professional</label>
-                    <input type="radio" name="college" value="college" id="college"/>
-                    <label for="college">College</label>
+                    <span>Do you like fighting?</span>
+                    <input type="radio" name="yes" value="yes" id="yes"/>
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="no" value="no" id="no"/>
+                    <label for="no">No</label>
                 </div>
                 <div>
                     <input type="radio" name="male" value="male" id="male"/>
@@ -32,13 +32,11 @@
                 </div>
                 <div>
                     <select name="category" id="drop-down" style:"color: black; font-size:1.5em">
-                        <option value>Select Sport</option>
-                        <option value="Basketball">Basketball</option>
-                        <option value="Swimming">Swimming</option>
-                        <option value="Track&Field">Track&Field</option>
-                        <option value="Baseball/Softball">Baseball/Softball</option>
-                        <option value="Wrestling">Wrestling</option>
-                        <option value="Football">Football</option>
+                        <option value>Select Class</option>
+                        <option value="saiyan">Saiyan</option>
+                        <option value="namekian">Namekian</option>
+                        <option value="frieza">Frieza Army</option>
+                        <option value="human">Human</option>
                     </select>
                 </div>
                 <div>
@@ -47,12 +45,26 @@
                 </div>
             </form>
         </div>
+        
         <?php
-        if (isset($_GET['search']) && ($_GET['search'] !== '')) {
-            $search = urlencode($_GET['search']);
-            echo "<a href='http://google.com/q={$search}'>Click here to search for '$search'</a>";
-        }
+                    $saiyan = array("Goku","Vegeta","Gohan","Goten","Trunks","Napa","Raditz","Bardock", "Broly","King_Vegeta");
+                    $namekian = array("Piccolo", "Dende","Kami","Nail","Guru");
+                    $frieza = array("Frieza","Cooler","King_Cold","Zarbon","Dodoria");
+                    $human = array("Hercule","Videl","Yamcha", "Krillin", "Roshi","Bulma","ChiChi");
+            if(isset($_POST['submit'])){
+                if (isset($_GET['name'])) {
+                    if($_GET['name'] == null && $_GET['category'] == null){
+                        echo "select keyword by typing or using drop down menu";
+                    }
+                    else 
+                    {
+                        echo "<div>Hello " .$_GET['name']. " you rock.</div>";
+                    }
+                }
+            }
+        
         ?>
+        
         
     </body>
 </html>
