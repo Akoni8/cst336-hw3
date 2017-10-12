@@ -47,21 +47,29 @@
         </div>
         
         <?php
-                    $saiyan = array("Goku","Vegeta","Gohan","Goten","Trunks","Napa","Raditz","Bardock", "Broly","King_Vegeta");
-                    $namekian = array("Piccolo", "Dende","Kami","Nail","Guru");
-                    $frieza = array("Frieza","Cooler","King_Cold","Zarbon","Dodoria");
-                    $human = array("Hercule","Videl","Yamcha", "Krillin", "Roshi","Bulma","ChiChi");
-            if(isset($_POST['submit'])){
+            $saiyan = array("Goku","Vegeta","Gohan","Goten","Trunks","Napa","Raditz","Bardock", "Broly","King_Vegeta");
+            $namekian = array("Piccolo", "Dende","Kami","Nail","Guru");
+            $frieza = array("Frieza","Cooler","King_Cold","Zarbon","Dodoria");
+            $human = array("Hercule","Videl","Yamcha", "Krillin", "Roshi","Bulma","ChiChi");
+            echo "<img src='./images/$person.jpg' alt='$person' title='".ucfirst($person)."'width='400'/>";
+            
+            
+           // if(isset($_POST['submit'])){
                 if (isset($_GET['name'])) {
-                    if($_GET['name'] == null && $_GET['category'] == null){
-                        echo "select keyword by typing or using drop down menu";
+                    if( ($_GET['name'] == null) || ($_GET['category'] == null) || ($_GET['male'] == null && $_GET['female'] == null) || ($_GET['yes']== null && $_GET['no']== null)){
+                        echo "<div> Please fill out all form elements.</div>";
                     }
                     else 
                     {
                         echo "<div>Hello " .$_GET['name']. " you rock.</div>";
+                        
                     }
                 }
-            }
+          //  }
+          
+          function fighter() {
+              global $saiyan, $namekian, $frieza, $human;
+          }
         
         ?>
         
