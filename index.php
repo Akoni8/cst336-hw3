@@ -55,7 +55,7 @@
             
            // if(isset($_POST['submit'])){
                 if (isset($_GET['name'])) {
-                    if( ($_GET['name'] == null) || ($_GET['category'] == null) || ($_GET['male'] == null && $_GET['female'] == null) || ($_GET['yes']== null && $_GET['no']== null)){
+                    if( ($_GET['name'] == null) || ($_GET['class'] == null) || ($_GET['male'] == null && $_GET['female'] == null) || ($_GET['yes']== null && $_GET['no']== null)){
                         echo "<div> Please fill out all form elements.</div>";
                     }
                     else 
