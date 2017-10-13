@@ -1,3 +1,6 @@
+<?php
+    include 'functions.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,12 +28,6 @@
                     <label for="no">No</label>
                 </div>
                 <div>
-                    <input type="radio" name="male" value="male" id="male"/>
-                    <label for="male">Male</label>
-                    <input type="radio" name="female" value="female" id="female"/>
-                    <label for="female">Female</label>
-                </div>
-                <div>
                     <select name="class" id="drop-down" style:"color: black; font-size:1.5em">
                         <option value>Select Class</option>
                         <option value="saiyan">Saiyan</option>
@@ -44,56 +41,24 @@
                     <input type="submit" value="Submit">
                 </div>
             </form>
-        </div>
-        
+                    
         <?php
             $saiyan = array("Goku","Vegeta","Gohan","Goten","Trunks","Napa","Raditz","Bardock", "Broly","King_Vegeta");
             $namekian = array("Piccolo", "Dende","Kami","Nail","Guru");
             $frieza = array("Frieza","Cooler","King_Cold","Zarbon","Dodoria");
             $human = array("Hercule","Videl","Yamcha", "Krillin", "Roshi","Bulma","ChiChi");
-            
-            
-           // if(isset($_POST['submit'])){
-                if (isset($_GET['name'])) {
-                    if( ($_GET['name'] == null) || ($_GET['class'] == null) || ($_GET['male'] == null && $_GET['female'] == null) || ($_GET['yes']== null && $_GET['no']== null)){
-                        echo "<div> Please fill out all form elements.</div>";
-                    }
-                    else 
-                    {
-                        echo "<div>Hello " .$_GET['name']. " you got </div>";
-                        fighter();
-                    }
+           
+            if (isset($_GET['name'])) {
+                if( ($_GET['name'] == null) || ($_GET['class'] == null) || ($_GET['yes']== null && $_GET['no']== null)){
+                    echo "<div> Please fill out all form elements.</div>";
                 }
-          //  }
-          
-          function fighter() {
-            global $saiyan, $namekian, $frieza, $human;
-            $gender = "";
-              
-            if(isset($_GET['no'])){
-                echo "<div> Yamcha because you don't like fighting</div>";
-                echo "<img src='./images/Male/Yamcha.jpg' alt='Yamcha' title='".ucfirst("Yamcha")."'width='400'/>";
+                else 
+                {
+                    echo "<div>Hello " .$_GET['name']. " you got </div>";
+                    fighter();
+                }
             }
-            else
-            {
-                if(isset($_GET['male'])) {
-                    $gender = "Male";
-                }
-                  
-                if(isset($_GET['female'])) {
-                 $gender = "Female";
-                }
-                 
-                $class = $_GET['class'];
-                $character = array_rand($class);
-                $person = $class[$character];
-                
-                echo "<img src='./images/$gender/$person.jpg' alt='$person' title='".ucfirst($person)."'width='400'/>";
-            }
-          }
-        
         ?>
-        
-        
+        </div>
     </body>
 </html>
