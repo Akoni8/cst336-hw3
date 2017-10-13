@@ -5,41 +5,46 @@
 <html>
     <head>
         <title>Homework 3</title>
-        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            @import url("styles.css"); 
+        </style>
     </head>
     <body>
 
         <div id="container">
             
-            <!--<h1> <span id="dragon">Dragon</span> <span id="ball">Ball</span> <span id="z">Z</span></h1>-->
-            <!--<h2 id="fighter">Fighter</h2>-->
-            <a href="https://fontmeme.com/dragon-ball-z-font/"><img src="https://fontmeme.com/permalink/171005/9c302a752a3cbd4ddeaf73cf76bfb9e4.png" alt="dragon-ball-z-font" border="0"></a>
+            <p id="logo">
+            <a href="https://fontmeme.com/dragon-ball-z-font/"><img src="https://fontmeme.com/permalink/171013/494be0ef5bf2ce1c5562f71f2ffe0e3b.png" alt="dragon-ball-z-font" border="0"></a>
+            </p>
+            
+            <h1>Which fighter are you?</h1>
             
             <form>
-                <div>
-                    <span>What is your name?</span>
-                    <input type="text" name="name" placeholder="Name">
-                </div>
-                <div>
-                    <span>Do you like fighting?</span>
-                    <input type="radio" name="yes" value="yes" id="yes"/>
-                    <label for="yes">Yes</label>
-                    <input type="radio" name="no" value="no" id="no"/>
-                    <label for="no">No</label>
-                </div>
-                <div>
-                    <select name="class" id="drop-down" style:"color: black; font-size:1.5em">
-                        <option value>Select Class</option>
-                        <option value="saiyan">Saiyan</option>
-                        <option value="namekian">Namekian</option>
-                        <option value="frieza">Frieza Army</option>
-                        <option value="human">Human</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="reset">
-                    <input type="submit" value="Submit">
-                </div>
+                    <div>
+                        <span>What is your name?</span>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div>
+                        <span>Do you like fighting?</span>
+                        <input type="radio" name="yes" value="yes" id="yes"/>
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="no" value="no" id="no"/>
+                        <label for="no">No</label>
+                    </div>
+                    <div class="form-group">
+                        <select name="class" id="drop-down" style:"color: black; font-size:1.5em">
+                            <option value>Select Class</option>
+                            <option value="saiyan">Saiyan</option>
+                            <option value="namekian">Namekian</option>
+                            <option value="frieza">Frieza Army</option>
+                            <option value="human">Human</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="reset">
+                        <input type="submit" value="Submit">
+                    </div>
             </form>
                     
         <?php
@@ -54,7 +59,7 @@
                 }
                 else 
                 {
-                    echo "<div>Hello " .$_GET['name']. " you got </div>";
+                    echo "<div>Hello <span id='name'>" .$_GET['name']. "</span> you got </div>";
                     fighter();
                 }
             }

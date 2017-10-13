@@ -6,40 +6,43 @@ body {
     font-family: serif;
     font-size: 1.4em;
     font-weight: bold;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 #container {
     margin: 0 auto;
     text-align: center;
+    font-size: 1.5em;
 }
 
 div {
     color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    text-align:center;
-}
-
-#dragon {
-    color: yellow;
-    text-transform: uppercase;
-}
-
-#ball {
-    color:red;
-    text-transform: uppercase;
-}
-
-#z {
-    font-size: 1.4em;
-    color: red;
+    font-size: 1.2em;
 }
 
 p {
-    text-align: center;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+   color: orange;
 }
 
 #fighter {
     color: orange;
     text-transform: uppercase;
+}
+
+#name::first-letter { 
+    text-transform: capitalize;
+    
+}
+
+#logo {
+    padding-bottom: 20px;
+}
+
+h1 {
+    color: #E4DBD5;
+    font-weight: bold;
+}
+
+span {
+    font-size: 1.2em;
+    color: #F3812E;
 }
