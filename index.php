@@ -51,7 +51,6 @@
             $namekian = array("Piccolo", "Dende","Kami","Nail","Guru");
             $frieza = array("Frieza","Cooler","King_Cold","Zarbon","Dodoria");
             $human = array("Hercule","Videl","Yamcha", "Krillin", "Roshi","Bulma","ChiChi");
-            echo "<img src='./images/$person.jpg' alt='$person' title='".ucfirst($person)."'width='400'/>";
             
             
            // if(isset($_POST['submit'])){
