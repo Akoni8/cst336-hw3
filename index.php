@@ -31,7 +31,7 @@
                     <label for="female">Female</label>
                 </div>
                 <div>
-                    <select name="category" id="drop-down" style:"color: black; font-size:1.5em">
+                    <select name="class" id="drop-down" style:"color: black; font-size:1.5em">
                         <option value>Select Class</option>
                         <option value="saiyan">Saiyan</option>
                         <option value="namekian">Namekian</option>
@@ -61,14 +61,36 @@
                     }
                     else 
                     {
-                        echo "<div>Hello " .$_GET['name']. " you rock.</div>";
-                        
+                        echo "<div>Hello " .$_GET['name']. " you got </div>";
+                        fighter();
                     }
                 }
           //  }
           
           function fighter() {
-              global $saiyan, $namekian, $frieza, $human;
+            global $saiyan, $namekian, $frieza, $human;
+            $gender = "";
+              
+            if(isset($_GET['no'])){
+                echo "<div> Yamcha because you don't like fighting</div>";
+                echo "<img src='./images/Male/Yamcha.jpg' alt='Yamcha' title='".ucfirst("Yamcha")."'width='400'/>";
+            }
+            else
+            {
+                if(isset($_GET['male'])) {
+                    $gender = "Male";
+                }
+                  
+                if(isset($_GET['female'])) {
+                 $gender = "Female";
+                }
+                 
+                $class = $_GET['class'];
+                $character = array_rand($class);
+                $person = $class[$character];
+                
+                echo "<img src='./images/$gender/$person.jpg' alt='$person' title='".ucfirst($person)."'width='400'/>";
+            }
           }
         
         ?>
